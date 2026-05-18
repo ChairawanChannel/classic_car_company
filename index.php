@@ -51,6 +51,9 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                     <td><?= $row['quantityInStock'] ?></td>
                                     <td>Rp <?= number_format($row['price'], 0, ',', '.') ?></td>
                                     <td class="text-center">
+                                        <!-- Tambahkan tombol Detail (read.php) ini -->
+                                        <a href="read.php?code=<?= $row['productCode'] ?>" class="btn btn-info btn-sm text-white me-1">Detail</a>
+    
                                         <a href="edit.php?code=<?= $row['productCode'] ?>" class="btn btn-warning btn-sm me-1">Edit</a>
                                         <a href="index.php?hapus=<?= $row['productCode'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus?')">Hapus</a>
                                     </td>
